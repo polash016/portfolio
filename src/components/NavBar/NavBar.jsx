@@ -8,14 +8,10 @@ import {
 } from "@material-tailwind/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import logo from "../../images/robin_logo.png";
+
 function NavList() {
-  const handleDownload = () => {
-    const fileURL =
-      "https://drive.google.com/uc?export=download&id=1NregxvdFayOGD8NI-miW_AnsdN-2RJh2";
-    window.open(fileURL, "_blank");
-  };
   return (
-    <ul className="my-2 flex flex-col gap-2 lg:mb-0 lg:mt-0 lg:flex-row lg:items-center lg:gap-6">
+    <ul className="flex justify-center gap-6">
       <Typography
         as="li"
         variant="small"
@@ -68,19 +64,10 @@ function NavList() {
           Contact
         </a>
       </Typography>
-      <Typography
-        as="li"
-        variant="small"
-        color="blue-gray"
-        className="p-1 font-medium"
-      >
-        <Button onClick={handleDownload} size="sm">
-          Download Resume
-        </Button>
-      </Typography>
     </ul>
   );
 }
+
 const NavBar = () => {
   const [openNav, setOpenNav] = React.useState(false);
 
@@ -89,26 +76,40 @@ const NavBar = () => {
 
   React.useEffect(() => {
     window.addEventListener("resize", handleWindowResize);
-
-    return () => {
-      window.removeEventListener("resize", handleWindowResize);
-    };
+    return () => window.removeEventListener("resize", handleWindowResize);
   }, []);
+  const handleDownload = () => {
+    const fileURL =
+      "https://drive.google.com/uc?export=download&id=1NregxvdFayOGD8NI-miW_AnsdN-2RJh2";
+    window.open(fileURL, "_blank");
+  };
 
   return (
     <Navbar className="mx-auto fixed z-10 top-0 bg-opacity-0 border-none px-8 py-2 min-w-full">
-      <div className="w-full flex items-center justify-between text-blue-gray-900">
+      <div className="flex items-center justify-between text-blue-gray-900 w-full">
+        {/* Left: Logo */}
         <Typography
           as="a"
           href="#"
           variant="h6"
           className="mr-4 cursor-pointer py-1.5"
         >
-          <img className="h-8 w-40" src={logo} alt="" />
+          <img className="h-8 w-40" src={logo} alt="logo" />
         </Typography>
-        <div className="hidden lg:block">
+
+        {/* Center: Navigation links */}
+        <div className="hidden lg:flex flex-grow justify-center">
           <NavList />
         </div>
+
+        {/* Right: Download Resume Button */}
+        <div className="hidden lg:block">
+          <Button onClick={handleDownload} size="sm">
+            Download Resume
+          </Button>
+        </div>
+
+        {/* Mobile menu toggle */}
         <IconButton
           variant="text"
           className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"
@@ -122,8 +123,14 @@ const NavBar = () => {
           )}
         </IconButton>
       </div>
+
       <Collapse open={openNav}>
         <NavList />
+        <div className="block lg:hidden mt-2">
+          <Button onClick={handleDownload} size="sm">
+            Download Resume
+          </Button>
+        </div>
       </Collapse>
     </Navbar>
   );
