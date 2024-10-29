@@ -80,14 +80,13 @@ const NavBar = () => {
   }, []);
   const handleDownload = () => {
     const fileURL =
-      "https://drive.google.com/uc?export=download&id=1NregxvdFayOGD8NI-miW_AnsdN-2RJh2";
+      "https://drive.google.com/uc?export=download&id=1JNHkCqDYH-WgleVhNSzx4V4_n5LgY6Bh";
     window.open(fileURL, "_blank");
   };
 
   return (
     <Navbar className="mx-auto fixed z-10 top-0 bg-opacity-0 border-none px-8 py-2 min-w-full">
       <div className="flex items-center justify-between text-blue-gray-900 w-full">
-        {/* Left: Logo */}
         <Typography
           as="a"
           href="#"
@@ -97,19 +96,16 @@ const NavBar = () => {
           <img className="h-8 w-40" src={logo} alt="logo" />
         </Typography>
 
-        {/* Center: Navigation links */}
         <div className="hidden lg:flex flex-grow justify-center">
           <NavList />
         </div>
 
-        {/* Right: Download Resume Button */}
         <div className="hidden lg:block">
           <Button onClick={handleDownload} size="sm">
             Download Resume
           </Button>
         </div>
 
-        {/* Mobile menu toggle */}
         <IconButton
           variant="text"
           className="ml-auto h-6 w-6 text-inherit hover:bg-transparent focus:bg-transparent active:bg-transparent lg:hidden"

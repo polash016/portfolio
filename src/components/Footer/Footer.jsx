@@ -140,22 +140,25 @@ const Footer = () => {
       <use xlink:href="#SvgjsPath1001" x="690" y="510" stroke="#1c538e"></use>
       <use xlink:href="#SvgjsPath1002" x="690" y="570" stroke="#1c538e"></use>
   </symbol>
-</svg>`
+</svg>`;
   return (
-    <div className="bg-gray-900"
-    style={{
-      backgroundImage: `url("data:image/svg+xml,${encodeURIComponent(svgContent)}")`,
-      backgroundPosition: "center",
-      backgroundSize: "cover",
-      backgroundRepeat: "no-repeat",
-    }}
+    <div
+      className="bg-gray-900"
+      style={{
+        backgroundImage: `url("data:image/svg+xml,${encodeURIComponent(
+          svgContent
+        )}")`,
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+      }}
     >
       <div className=" w-[90%] mx-auto flex justify-between items-center py-8 text-white">
         <div className="w-[50%]">
           <img className="w-48" src={logo} alt="" />
-          <p>
+          <p className="text-sm">
             A React developer crafting a full-stack solution with Express.js for
-            the backend and MongoDB for the database
+            the backend, PostgreSql and MongoDB for the database.
           </p>
         </div>
         <div className="flex gap-6">
@@ -185,11 +188,13 @@ const Footer = () => {
           </a>
         </div>
       </div>
-      
+
       <div className="border border-white w-[90%] mx-auto h-[1px]"></div>
-        <div className="text-center text-white py-4">
-        <small>&copy; 2023. Made by <span className="font-bold">Robin Sarkar</span></small>
-        </div>
+      <div className="text-center text-white py-4">
+        <small>
+          &copy; 2023. Made by <span className="font-bold">Robin Sarkar</span>
+        </small>
+      </div>
     </div>
   );
 };

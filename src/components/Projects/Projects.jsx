@@ -1,4 +1,9 @@
-import { Button, Carousel, IconButton, Progress } from "@material-tailwind/react";
+import {
+  Button,
+  Carousel,
+  IconButton,
+  Progress,
+} from "@material-tailwind/react";
 import summerCamp1 from "../../images/summer-camp2.png";
 import summerCamp2 from "../../images/summer-camp4.png";
 import summerCamp3 from "../../images/summer-camp5.png";
@@ -9,6 +14,9 @@ import toyStore3 from "../../images/toy-store2.png";
 import chef1 from "../../images/chef-hunter.png";
 import chef2 from "../../images/chef-hunter1.png";
 import chef3 from "../../images/chef-hunter2.png";
+import event1 from "../../images/event1.png";
+import event2 from "../../images/event2.png";
+import event3 from "../../images/event3.png";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 const Projects = () => {
@@ -26,7 +34,8 @@ const Projects = () => {
 </svg>`;
 
   return (
-    <div id="project"
+    <div
+      id="project"
       style={{
         backgroundImage: `url("data:image/svg+xml,${encodeURIComponent(
           svgContent
@@ -39,8 +48,79 @@ const Projects = () => {
       <div className="py-4">
         <h1 className="text-xl font-bold text-center text-white">Projects</h1>
         <Progress className="w-8 h-0.5 mx-auto" value={100} color="amber" />
+      </div>
+      <div className="w-[90%] mx-auto text-white py-6 space-y-4">
+        <div className="lg:flex gap-6">
+          <div className="w-full lg:w-[60%]">
+            <Carousel
+              prevArrow={({ handlePrev }) => (
+                <IconButton
+                  variant="text"
+                  color="white"
+                  size="lg"
+                  onClick={handlePrev}
+                  className="!absolute top-2/4 -translate-y-2/4 left-4"
+                >
+                  <FaArrowLeft
+                    strokeWidth={2}
+                    className="w-6 h-6 text-black text-opacity-50"
+                  />
+                </IconButton>
+              )}
+              nextArrow={({ handleNext }) => (
+                <IconButton
+                  variant="text"
+                  color="white"
+                  size="lg"
+                  onClick={handleNext}
+                  className="!absolute top-2/4 -translate-y-2/4 !right-4"
+                >
+                  <FaArrowRight
+                    strokeWidth={2}
+                    className="w-6 h-6 text-black text-opacity-50"
+                  />
+                </IconButton>
+              )}
+              className="rounded-xl"
+            >
+              <img
+                src={event1}
+                alt="image 1"
+                className="h-full w-full object-cover"
+              />
+              <img
+                src={event2}
+                alt="image 2"
+                className="h-full w-full object-cover"
+              />
+              <img
+                src={event3}
+                alt="image 3"
+                className="h-full w-full object-cover"
+              />
+            </Carousel>
+          </div>
+          <div className="w-full lg:w-[40%] text-center my-auto">
+            <h1 className="text-2xl font-semibold py-4 mb-8 text-center">
+              Event Hive
+            </h1>
+            <p className="text-gray-700">
+              Event Hive is a event management web application designed for
+              organizing, purchasing, and managing events. It offers role-based
+              functionality to cater to different user groups, providing a
+              seamless experience from event creation to ticket purchasing.
+              Built using cutting-edge web technologies like Next.js,
+              PostgreSQL, and Express.js.
+            </p>
+            <a
+              href="https://event-hive-client.vercel.app/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Button className="my-6">View Website</Button>
+            </a>
+          </div>
         </div>
-      <div className="w-[90%] mx-auto text-white py-6">
         <div className="lg:flex gap-6">
           <div className="w-full lg:w-[60%]">
             <Carousel
@@ -100,7 +180,7 @@ const Projects = () => {
             <h1 className="text-2xl font-semibold py-4 mb-8 text-center">
               Music Instrument School
             </h1>
-            <p className="text-gray-600">
+            <p className="text-gray-700">
               Music Instrument School With Music Classes to Buy. Website Has
               Dashboard for Users, Instructor Of Class & Admin. Developed With
               React, Tailwind, Express Js, MongoDB and etc.
@@ -168,79 +248,13 @@ const Projects = () => {
             <h1 className="text-2xl font-semibold py-4 mb-8 text-center">
               Toy Store
             </h1>
-            <p className="text-gray-600">
-              Toy Store With Various Kinds of Toys. Users Can Add Toy, Update & Delete their Toys. Developed With
-              React, Tailwind, Express Js, MongoDB and etc. 
+            <p className="text-gray-800">
+              Toy Store With Various Kinds of Toys. Users Can Add Toy, Update &
+              Delete their Toys. Developed With React, Tailwind, Express Js,
+              MongoDB and etc.
             </p>
             <a
               href="https://a11-toy-express.web.app/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Button className="my-6">View Website</Button>
-            </a>
-          </div>
-        </div>
-        <div className="lg:flex gap-6">
-          <div className="w-full lg:w-[60%]">
-            <Carousel
-              prevArrow={({ handlePrev }) => (
-                <IconButton
-                  variant="text"
-                  color="white"
-                  size="lg"
-                  onClick={handlePrev}
-                  className="!absolute top-2/4 -translate-y-2/4 left-4"
-                >
-                  <FaArrowLeft
-                    strokeWidth={2}
-                    className="w-6 h-6 text-black text-opacity-50"
-                  />
-                </IconButton>
-              )}
-              nextArrow={({ handleNext }) => (
-                <IconButton
-                  variant="text"
-                  color="white"
-                  size="lg"
-                  onClick={handleNext}
-                  className="!absolute top-2/4 -translate-y-2/4 !right-4"
-                >
-                  <FaArrowRight
-                    strokeWidth={2}
-                    className="w-6 h-6 text-black text-opacity-50"
-                  />
-                </IconButton>
-              )}
-              className="rounded-xl"
-            >
-              <img
-                src={chef1}
-                alt="image 1"
-                className="h-full w-full object-cover"
-              />
-              <img
-                src={chef2}
-                alt="image 2"
-                className="h-full w-full object-cover"
-              />
-              <img
-                src={chef3}
-                alt="image 3"
-                className="h-full w-full object-cover"
-              />
-            </Carousel>
-          </div>
-          <div className="w-full lg:w-[40%] text-center my-auto">
-            <h1 className="text-2xl font-semibold py-4 mb-8 text-center">
-              Chef Hunter
-            </h1>
-            <p className="text-gray-600">
-              Chef Hunter App for Best Chefs of Restaurant & their recipes. Only Users Can View Recipes of Chefs. Developed With
-              React, Tailwind, Express Js, MongoDB and etc.
-            </p>
-            <a
-              href="https://a10-chef-hunter.web.app/"
               target="_blank"
               rel="noreferrer"
             >
